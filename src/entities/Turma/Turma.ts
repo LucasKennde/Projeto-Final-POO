@@ -1,5 +1,4 @@
 type TipoEnsino = 'presencial' | 'ead';
-type Classificacao = 'A' | 'B' | 'C' | 'D';
 import { Aluno } from "../Aluno/Aluno";
 
 
@@ -26,6 +25,10 @@ export class Turma {
     }
   
     adicionarAluno(aluno: Aluno): void {
+    const alunoExistente = this.alunos.some(a => a.email === aluno.email);
+    if (alunoExistente) {
+        throw new Error('Aluno já está matriculado nesta turma');
+        }
       if (this.alunos.length >= this.maximo) {
         throw new Error('Turma está cheia');
       }
