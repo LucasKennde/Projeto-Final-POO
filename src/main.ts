@@ -21,10 +21,11 @@ const aluno8 = new Aluno('Ana', 'Costa', 'ana.costa@gmail.com', 'ead', turmaEad,
 
 
 const aluno9 = new Aluno('Fernanda', 'Silva', 'fernanda.silva@gmail.com', 'ead', turmaEad, new Date(1998, 3, 23), [8, 9, 8, 10], true, "C");
-const aluno10 = new Aluno('Rafael', 'Almeida', 'rafael.almeida@gmail.com', 'presencial', turmaEad, new Date(2000, 5, 27), [6, 7, 8, 7], true, "C");
 
-const aluno11 = new Aluno('Paulo', 'Oliveira', 'paulo.oliveira@gmail.com', 'presencial', turmaPresencial, new Date(1996, 11, 20), [7, 8, 9, 6], true, "D");
-const aluno12 = new Aluno('Bruno', 'Mendes', 'bruno.mendes@gmail.com', 'presencial', turmaPresencial, new Date(1996, 10, 22), [7, 8, 7, 9], true, "D");
+// const aluno10 = new Aluno('Rafael', 'Almeida', 'rafael.almeida@gmail.com', 'presencial', turmaEad, new Date(2000, 5, 27), [6, 7, 8, 7], true, "C");
+
+// const aluno11 = new Aluno('Paulo', 'Oliveira', 'paulo.oliveira@gmail.com', 'presencial', turmaPresencial, new Date(1996, 11, 20), [7, 8, 9, 6], true, "D");
+// const aluno12 = new Aluno('Bruno', 'Mendes', 'bruno.mendes@gmail.com', 'presencial', turmaPresencial, new Date(1996, 10, 22), [7, 8, 7, 9], true, "D");
 
 escola.adicionarTurma(turmaPresencial)
 console.log(aluno1.Idade())

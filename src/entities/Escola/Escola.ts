@@ -1,8 +1,6 @@
 import { Turma } from '../Turma/Turma';
 
 export class Escola {
-
-   
     constructor(
         public nome: string,
         private turmas: Turma[] = []) {}
