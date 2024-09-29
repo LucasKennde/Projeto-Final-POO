@@ -3,7 +3,7 @@ type Classificacao = 'A' | 'B' | 'C' | 'D';
 import { Turma } from "../Turma/Turma";
 
 export class Aluno {
-    private static alunosRegistrados: String[] = [];
+    public static alunosRegistrados: String[] = [];
 
     constructor(
         private _nome: string,
