@@ -1,8 +1,9 @@
 type TipoEnsino = 'presencial' | 'ead';
 type Classificacao = 'A' | 'B' | 'C' | 'D';
+// import { IAluno } from "../../interfaces/Aluno/iAluno";
 import { Turma } from "../Turma/Turma";
 
-export class Aluno {
+export class Aluno{
     public static alunosRegistrados: String[] = [];
 
     constructor(

@@ -1,9 +1,13 @@
+import { IEscola } from '../../interfaces/Escola/Escola';
 import { Turma } from '../Turma/Turma';
 
-export class Escola {
+
+
+export class Escola implements IEscola {
+
     constructor(
         public nome: string,
-        private turmas: Turma[] = []) {}
+        public turmas: Turma[] = []) {}
 
    
     public adicionarTurma(turma: Turma): void {
