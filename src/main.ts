@@ -1,3 +1,4 @@
+import './style.css'
 import { Aluno } from "./entities/Aluno/Aluno";
 import { Escola } from "./entities/Escola/Escola";
 import { Turma } from "./entities/Turma/Turma";
@@ -15,8 +16,8 @@ const aluno3 = new Aluno('Beatriz', 'Lima', 'beatriz.lima@gmail.com', 'presencia
 
 const aluno4 = new Aluno('Mariana', 'Ferreira', 'mariana.ferreira@gmail.com', 'ead', turmaEad, new Date(1998, 7, 14), [8, 9, 10, 8], true, "B");
 const aluno5 = new Aluno('Marcela', 'Souza', 'marcela.souza@gmail.com', 'ead', turmaEad, new Date(1995, 8, 5), [9, 9, 10, 8], true, "B");
-const aluno6 = new Aluno('Juliana', 'Guimaraes', 'Juliana@gmail.com', 'ead', turmaEad, new Date(1996,12,5), [10, 10, 10,10], true,"B" )
-const aluno7 = new Aluno('Lucas', 'Kennde', 'lucaskennde@gmail.com', 'ead', turmaEad, new Date(1996,12,5), [10, 10, 10,10], true,"B" )
+const aluno6 = new Aluno('Juliana', 'Guimaraes', 'Juliana@gmail.com', 'ead', turmaEad, new Date(1996, 12, 5), [10, 10, 10, 10], true, "B")
+const aluno7 = new Aluno('Lucas', 'Kennde', 'lucaskennde@gmail.com', 'ead', turmaEad, new Date(1996, 12, 5), [10, 10, 10, 10], true, "B")
 const aluno8 = new Aluno('Ana', 'Costa', 'ana.costa@gmail.com', 'ead', turmaEad, new Date(1999, 1, 18), [7, 7, 8, 9], true, "B");
 
 
@@ -43,3 +44,26 @@ turmaEad.adicionarAluno(aluno9)
 
 
 console.log(turmaPresencial.alunos)
+function imprimirDetalhes(turma: Turma) {
+    const detalhes = document.createElement('div')
+    detalhes.innerHTML = `<h2>Turma: ${turma.codigo}</h2>`
+
+    const ul = document.createElement('ul')
+
+    turma.alunos.forEach(aluno => {
+        const node = document.createElement('li')
+        node.classList.add('aluno')
+        node.innerHTML = `
+            <span><strong>email:</strong> ${aluno.email}, <strong>nome:</strong> ${aluno.nome}</span>
+        `
+
+       ul.appendChild(node)
+    })
+
+    detalhes.appendChild(ul)
+    document.getElementById('app')?.appendChild(detalhes)
+    console.log(detalhes)
+}
+
+imprimirDetalhes(turmaPresencial)
+imprimirDetalhes(turmaEad)

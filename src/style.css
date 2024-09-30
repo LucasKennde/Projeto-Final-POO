@@ -1,0 +1,13 @@
+.aluno {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-size: larger;
+    color: black;
+}
