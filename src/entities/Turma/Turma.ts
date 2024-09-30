@@ -1,8 +1,8 @@
 type TipoEnsino = 'presencial' | 'ead';
+import { ITurma } from "../../interfaces/Turma/iTurma";
 import { Aluno } from "../Aluno/Aluno";
 
-
-export class Turma {
+export class Turma implements ITurma {
     private static turmasRegistradas: number[] =[];
     public alunos: Aluno[] = [];
   
