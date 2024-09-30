@@ -1,9 +1,10 @@
 type TipoEnsino = 'presencial' | 'ead';
 type Classificacao = 'A' | 'B' | 'C' | 'D';
+import { IAluno } from "../../interfaces/Aluno/iAluno";
 // import { IAluno } from "../../interfaces/Aluno/iAluno";
 import { Turma } from "../Turma/Turma";
 
-export class Aluno{
+export class Aluno implements IAluno {
     public static alunosRegistrados: String[] = [];
 
     constructor(
@@ -26,26 +27,32 @@ export class Aluno{
         Aluno.alunosRegistrados.push(_email);
     }
 
-    get nome():string{
+    get nome(): string {
         return this._nome;
     }
-    get sobrenome():string{
+    get sobrenome(): string {
         return this._sobrenome;
     }
-    get email():string{
+    get email(): string {
         return this._email;
     }
-    get tipo(): TipoEnsino{
+    get tipo(): TipoEnsino {
         return this._tipo;
     }
-    get turma(): Turma{
+    get turma(): Turma {
         return this._turma;
     }
-    get ativo(): boolean{
+    get ativo(): boolean {
         return this._ativo;
     }
-    get classificacao(): Classificacao{
+    get classificacao(): Classificacao {
         return this._classificacao;
+    }
+    get nascimento(): Date {
+        return this._nascimento
+    }
+    get notas(): number[] {
+        return this._notas
     }
 
 
