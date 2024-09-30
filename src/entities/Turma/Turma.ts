@@ -1,9 +1,11 @@
-type TipoEnsino = 'presencial' | 'ead';
+import { TipoEnsino } from "../../types/types";
 import { ITurma } from "../../interfaces/Turma/iTurma";
 import { Aluno } from "../Aluno/Aluno";
 
-export class Turma implements ITurma {
-    private static turmasRegistradas: number[] =[];
+
+export class Turma implements ITurma{
+  // private static turmasCadastradas: Set<number> = new Set();
+    private static turmasCadastradas: number[] =[];
     public alunos: Aluno[] = [];
   
     constructor(
@@ -18,10 +20,10 @@ export class Turma implements ITurma {
       if (maximo < 5 || maximo > 10) {
         throw new Error('Número máximo de alunos deve estar entre 5 e 10');
       }
-      if (Turma.turmasRegistradas.includes(codigo)) {
+      if (Turma.turmasCadastradas.includes(codigo)) {
         throw new Error('Turma com este código já existe');
       }
-      Turma.turmasRegistradas.push(codigo);
+      Turma.turmasCadastradas.push(codigo);
     }
   
     adicionarAluno(aluno: Aluno): void {

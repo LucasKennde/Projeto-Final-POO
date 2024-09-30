@@ -14,7 +14,6 @@ export interface IAluno {
     ativo: boolean;
     classificacao: Classificacao;
 
-    Idade(): number;
     calcularMedia(): number;
     desativar(): void;
     ativar(): void;
